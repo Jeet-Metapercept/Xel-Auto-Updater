@@ -25,8 +25,12 @@
 		// wait for an updateAvailable message
         ipcRenderer.on('updateAvailable', function(event, text) {
             // changes the text
-            var update = document.getElementById('check');
-            update.innerHTML = "available & downloading...";
+            // var update = document.getElementById('check');
+            //update.innerHTML = "available & downloading...";
+			
+			let notification = document.querySelector("#notification");
+			notification.innerHTML = "updates available & downloading...";
+			notification.opened = true;
         })
 		
 		// wait for an updateNotAvailable message
@@ -61,7 +65,7 @@
     <div style="position:absolute; right:20%; bottom: 5%" id="messages"></div>
 
 	<div style="position:absolute; left:2%; bottom: 2%">
-    Version: <span id="version">v 0.3.8</span>
+    Version: <span id="version">v 0.3.9</span>
 	</div>
 	
 	
@@ -78,7 +82,7 @@
 	 </x-button>
 	</div>
 	
-
+<x-notification id="notification" timeout="5000"></x-notification>
 </body>
 
 </html>
