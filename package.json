@@ -1,32 +1,22 @@
 {
-  "name": "Xel-Electron-Updater",
-  "version": "0.0.6",
-  "description": "Electron Auto-Updater",
-  "main": "main.js",
+  "name": "VM2020",
+  "version": "0.3.5",
+  "author": "Jeet",
+  "homepage": "https://github.com/Jeet-Metapercept/VM2020-Electron",
+  "description": "An example of an autoupdating electron app",
+  "repository": "https://github.com/Jeet-Metapercept/VM2020-Electron",
+  "main": "electron.js",
+  "dependencies": {
+    "electron-titlebar-windows": "^3.0.0",
+    "electron-updater": "^2.23.3",
+    "xel": "0.0.141"
+  },
   "scripts": {
     "build": "build --win",
     "ship": "build --win -p always"
   },
-  "repository": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
-  "author": "Jeet",
-  "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
   "devDependencies": {
-    "asar": "^0.10.0",
-	"electron": "^1.7.5",
-    "electron-builder": "^20.23.1",
-    "electron-prebuilt": "^0.37.4",
-    "fs-jetpack": "^0.7.3",
-    "gulp": "^3.9.1",
-    "gulp-util": "^3.0.7",
-    "q": "^1.4.1",
-    "rcedit": "^0.4.0"
-  },
-  "dependencies": {
-    "electron-updater": "^3.0.3",
-    "xel": "0.0.141"
+    "electron": "^1.7.5",
+    "electron-builder": "^19.56.2"
   }
 }

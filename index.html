@@ -1,63 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>XEL Electron Auto Updater</title>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="description" content=""/>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+<html>
 
-        <!-- build:css assets/css/* -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/style.css" />
-		<link rel="stylesheet" href="node_modules/xel/themes/macos.css">
-        <!-- endbuild -->
-        
-		<!-- Insert this line above script imports  -->
-		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-		
-        <!-- jQuery -->
-        <script src="bower_components/jquery/dist/jquery.js"> </script>
+<head>
+    <title>Electron Updater</title>
+	<script src="node_modules/xel/xel.min.js"></script>
+	<link rel="stylesheet" href="node_modules/xel/themes/macos.css">
+</head>
 
-        <!-- build:js scripts/vendor.js -->
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
-        <script src="bower_components/angular-animate/angular-animate.js"></script>
-        <script src="bower_components/angular-aria/angular-aria.js"></script>
-        <!-- <script src="bower_components/angular-material/angular-material.js"></script> -->
-        <!-- endbuild -->
-
-         <!-- xel and Bootstrap -->
-        <!-- <script src="bower_components/bootcards/dist/js/bootcards.min.js"></script> -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="node_modules/xel/xel.min.js"></script>
-
-        <!-- build:app scripts/app.js -->
-        <script src="scripts/app.js"></script>
-
-            <!-- Controllers -->
-        <script src="scripts/controllers/mainController.js"></script>
-        <script src="scripts/controllers/loginController.js"></script>
-        <script src="scripts/controllers/signupController.js"></script>
-
-        <!-- Services -->
-        <script src="scripts/services/loginService.js"></script>
-        <script src="scripts/services/signupService.js"></script>
-
-        <script src="scripts/routes.js"></script>
-        <!-- endbuild -->
-		
-		<script>
+<body style="margin: 0;">
+	<!-- <script>
 		// You can also require other files to run in this process
-		require('./renderer.js')
-		</script>
+		require('./titlebar.js')
+	</script> -->
+    <script>
+        const ipcRenderer = require('electron').ipcRenderer;
+        // wait for an updateReady message
+        ipcRenderer.on('updateReady', function(event, text) {
+            // changes the text of the button
+            var container = document.getElementById('ready');
+            container.innerHTML = "new version ready!";
+			var update = document.getElementById('check');
+            update.innerHTML = "update download complete";
+        })
+		// wait for an updateAvailable message
+        ipcRenderer.on('updateAvailable', function(event, text) {
+            // changes the text
+            var update = document.getElementById('check');
+            update.innerHTML = "available & downloading...";
+        })
 		
-		<!-- Insert this line after script imports -->
-		<script>if (window.module) module = window.module;</script>
-    </head>
-<body ng-app="app">
-    <div ui-view></div>
+		// wait for an updateNotAvailable message
+        ipcRenderer.on('updateNotAvailable', function(event, text) {
+            // changes the text
+            var no_update = document.getElementById('check');
+            no_update.innerHTML = "no updates available";
+        })
+		
+		// Listen for messages
+		ipcRenderer.on('message', function(event, text) {
+		  var process_container = document.getElementById('messages');
+		  //var message = document.createElement('div');
+		  process_container.innerHTML = text;
+		 // container.appendChild(message);
+		})
+    </script>
+
+	
+	<x-card>
+	  <main>
+		<h2><strong>Electron Updater</strong></h2>
+		<!-- All of the Node.js APIs are available in this renderer process. -->
+		<p>We are using Node.js <script>document.write(process.versions.node)</script>,</p>
+		<p>Chromium <script>document.write(process.versions.chrome)</script>,</p>
+		<p>and Electron <script>document.write(process.versions.electron)</script>.</p>
+	  </main>
+	</x-card>
+	
+    <div style="position:absolute; right:20%; bottom: 5%" id="messages"></div>
+
+	<div style="position:absolute; left:2%; bottom: 2%">
+    Version: <span id="version">v 0.3.5</span>
+	</div>
+	
+	
+	<div style="position:absolute; right:45%; bottom: 2%">
+    <span id="check">checking for updates</span>
+	<x-progressbar></x-progressbar>
+	</div>
+	
+	<div style="position:absolute; right:2%; bottom: 2%">
+    <!-- the button onClick sends a quitAndInstall message to the electron main process -->
+    <!-- <button id="ready" onClick="ipcRenderer.send('quitAndInstall')">no updates</button> -->
+	 <x-button id="ready" onClick="ipcRenderer.send('quitAndInstall')">
+		<x-label>no updates</x-label>
+	 </x-button>
+	</div>
+	
+
 </body>
+
 </html>
