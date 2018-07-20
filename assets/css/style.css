@@ -1,3 +1,10 @@
+*, *::after, *::before {
+	-webkit-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-app-region: no-drag;
+	cursor: default;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -20,10 +27,11 @@ body {
 }
 
 .wwdc{
-	transform: scale(0.7);
-	-webkit-transform: scale(0.7);
-    -moz-transform: scale(0.7);
-    -o-transform: scale(0.7);
+	
+	transform: scale(0.5);
+	-webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
 }
 
 .wwdc span {
@@ -228,6 +236,15 @@ body {
 .content {
   text-align: center;
 }
+
+.content img{
+	 height: 45%;
+	 width:45%;
+	 margin-top: 60px;
+	-webkit-animation: spin 25s linear infinite;
+    animation: spin 25s linear infinite;
+}
+
 .content svg {
   fill: #fff;
   width: 3em;
