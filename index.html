@@ -8,7 +8,7 @@
 </head>
 
 <body style="margin: 0;">
-<x-notification id="notify" timeout="5000"></x-notification>
+<x-notification id="notify" timeout="3500"></x-notification>
 	<!-- <script>
 		// You can also require other files to run in this process
 		require('./titlebar.js')
@@ -20,8 +20,10 @@
             // changes the text of the button
             var container = document.getElementById('ready');
             container.innerHTML = "new version ready!";
-			var update = document.getElementById('check');
-            update.innerHTML = "update download complete";
+			
+			var update = document.querySelector("#notify");
+			update.innerHTML = "update download complete";
+            update.opened = true;
         })
 		// wait for an updateAvailable message
         ipcRenderer.on('updateAvailable', function(event, text) {
@@ -29,14 +31,20 @@
             //var update = document.getElementById('check');
             //update.innerHTML = "available & downloading...";
 			
-			key();
+			var update = document.querySelector("#notify");
+			update.innerHTML = "updates available & downloading...";
+			update.opened = true;
         })
 		
 		// wait for an updateNotAvailable message
         ipcRenderer.on('updateNotAvailable', function(event, text) {
             // changes the text
-            var no_update = document.getElementById('check');
-            no_update.innerHTML = "no updates available";
+            //var no_update = document.getElementById('check');
+            //no_update.innerHTML = "no updates available";
+			
+			var no_update = document.querySelector("#notify");
+			no_update.innerHTML = "no updates available";
+			no_update.opened = true;
         })
 		
 		// Listen for messages
@@ -69,12 +77,12 @@
     <div style="position:absolute; right:20%; bottom: 5%" id="messages"></div>
 
 	<div style="position:absolute; left:2%; bottom: 2%">
-    Version: <span id="version">v 0.4.0</span>
+    Version: <span id="version">v 0.4.1</span>
 	</div>
 	
 	
-	<div style="position:absolute; right:45%; bottom: 2%">
-    <span id="check">checking for updates</span>
+	<div style="position:absolute; right:50%; bottom: 2%;">
+    <span id="check">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 	<x-progressbar></x-progressbar>
 	</div>
 	
@@ -84,6 +92,46 @@
 	 <x-button id="ready" onClick="ipcRenderer.send('quitAndInstall')">
 		<x-label>no updates</x-label>
 	 </x-button>
+	</div>
+	
+	<div>
+		<main>
+		  <article class="wwdc">
+			<span class="spin">
+			  <!-- Large Circles -->
+			  <div class="large circle one"></div>
+			  <div class="large circle two"></div>
+			  <div class="large circle three"></div>
+			  <div class="large circle four"></div>
+			  <div class="large circle five"></div>
+			  <div class="large circle six"></div>
+			  <div class="large circle seven"></div>
+			  <div class="large circle eight"></div>
+			</span>
+			<span class="pulse">
+			  <!-- Small Shapes -->
+			  <div class="small circle one"></div>
+			  <div class="small squircle two"></div>
+			  <div class="small circle three"></div>
+			  <div class="small squircle four"></div>
+			  <div class="small circle five"></div>
+			  <div class="small squircle six"></div>
+			  <div class="small circle seven"></div>
+			  <div class="small squircle eight"></div>
+			</span>
+			  <!-- Squircles -->
+			  <span class="spin-reverse">
+				<div class="large squircle one"></div>
+			  </span>
+			  <div class="large squircle two">
+				<div class="content">
+				 <img src="assets/icons/icon.ico" style="height: 45%; width:45%; margin-top: 60px;"/>
+				<!-- <h1>The epicenter of change.</h1> -->
+				<!-- <p><strong>WWDC</strong>15</p> -->
+			  </div>
+			</div>
+		  </article>
+		</main>
 	</div>
 	
 <script>
