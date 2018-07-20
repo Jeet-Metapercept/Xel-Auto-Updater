@@ -1,12 +1,11 @@
 {
-  "name": "Xel-Auto-Updater",
+  "name": "Xel-Electron-Updater",
   "version": "0.0.6",
   "description": "Electron Auto-Updater",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-	"build": "build --win",
-	"ship": "build --win -p always"
+    "build": "build --win",
+    "ship": "build --win -p always"
   },
   "repository": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
   "author": "Jeet",
@@ -17,6 +16,7 @@
   "homepage": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
   "devDependencies": {
     "asar": "^0.10.0",
+	"electron": "^1.7.5",
     "electron-builder": "^20.23.1",
     "electron-prebuilt": "^0.37.4",
     "fs-jetpack": "^0.7.3",
