@@ -8,6 +8,7 @@
 </head>
 
 <body style="margin: 0;">
+<x-notification id="notify" timeout="5000"></x-notification>
 	<!-- <script>
 		// You can also require other files to run in this process
 		require('./titlebar.js')
@@ -25,12 +26,10 @@
 		// wait for an updateAvailable message
         ipcRenderer.on('updateAvailable', function(event, text) {
             // changes the text
-            // var update = document.getElementById('check');
+            //var update = document.getElementById('check');
             //update.innerHTML = "available & downloading...";
 			
-			let notification = document.querySelector("#notification");
-			notification.innerHTML = "updates available & downloading...";
-			notification.opened = true;
+			key();
         })
 		
 		// wait for an updateNotAvailable message
@@ -52,6 +51,7 @@
     </script>
 
 	
+	
 	<x-card>
 	  <main>
 		<h2><strong>Xel Electron Updater</strong></h2>
@@ -62,10 +62,14 @@
 	  </main>
 	</x-card>
 	
+	<x-button onClick="key();">
+	  <x-label>check for Updates</x-label>
+	</x-button>
+
     <div style="position:absolute; right:20%; bottom: 5%" id="messages"></div>
 
 	<div style="position:absolute; left:2%; bottom: 2%">
-    Version: <span id="version">v 0.3.9</span>
+    Version: <span id="version">v 0.4.0</span>
 	</div>
 	
 	
@@ -82,7 +86,14 @@
 	 </x-button>
 	</div>
 	
-<x-notification id="notification" timeout="5000"></x-notification>
+<script>
+	  var notification = document.querySelector("#notify");
+
+	  function key(){
+		notification.innerHTML = "checking for updates";
+		notification.opened = true;
+	  }
+</script>
 </body>
 
 </html>
