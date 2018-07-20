@@ -1,10 +1,10 @@
 {
   "name": "XelUpdater",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "author": "Jeet",
-  "homepage": "https://github.com/Jeet-Metapercept/VM2020-Electron",
+  "homepage": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
   "description": "An example of an autoupdating electron app",
-  "repository": "https://github.com/Jeet-Metapercept/VM2020-Electron",
+  "repository": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
   "main": "electron.js",
   "dependencies": {
     "electron-titlebar-windows": "^3.0.0",
