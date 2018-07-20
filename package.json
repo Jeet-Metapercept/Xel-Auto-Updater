@@ -1,6 +1,6 @@
 {
   "name": "XelUpdater",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "author": "Jeet",
   "homepage": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
   "description": "An example of an autoupdating electron app",
@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "build --win",
-    "ship": "build --win -p always"
+    "ship": "build --win -p always --icon=assets/icons/icon.ico"
   },
   "devDependencies": {
     "electron": "^1.7.5",

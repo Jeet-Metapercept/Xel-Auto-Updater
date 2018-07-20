@@ -40,7 +40,9 @@
 		ipcRenderer.on('message', function(event, text) {
 		  var process_container = document.getElementById('messages');
 		  //var message = document.createElement('div');
-		  process_container.innerHTML = text;
+		  var update_details = document.getElementById('check');
+		  update_details.innerHTML = text;
+		  
 		 // container.appendChild(message);
 		})
     </script>
@@ -59,7 +61,7 @@
     <div style="position:absolute; right:20%; bottom: 5%" id="messages"></div>
 
 	<div style="position:absolute; left:2%; bottom: 2%">
-    Version: <span id="version">v 0.3.7</span>
+    Version: <span id="version">v 0.3.8</span>
 	</div>
 	
 	

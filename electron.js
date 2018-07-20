@@ -19,7 +19,7 @@ function createDefaultWindow() {
 	frame: true,
     backgroundColor: '#fafafa',
     //show: false,
-    icon: path.join(__dirname, 'assets/icons/icon.png')
+    icon: __dirname + '/assets/icons/icon.ico'
 	});
 
     win.loadURL(`file://${__dirname}/index.html`);
