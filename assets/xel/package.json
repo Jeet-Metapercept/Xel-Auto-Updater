@@ -1,0 +1,120 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "xel",
+        "scope": null,
+        "escapedName": "xel",
+        "name": "xel",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\india\\Documents\\github\\VM2020-Electron"
+    ]
+  ],
+  "_from": "xel@latest",
+  "_id": "xel@0.0.141",
+  "_inCache": true,
+  "_location": "/xel",
+  "_nodeVersion": "10.2.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/xel_0.0.141_1528914318957_0.5849126560796669"
+  },
+  "_npmUser": {
+    "name": "jarek-foksa",
+    "email": "jarek@foksa.name"
+  },
+  "_npmVersion": "5.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "xel",
+    "scope": null,
+    "escapedName": "xel",
+    "name": "xel",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/xel/-/xel-0.0.141.tgz",
+  "_shasum": "0f91af307fbcbb5f13487cd97aa5094de723813d",
+  "_shrinkwrap": null,
+  "_spec": "xel",
+  "_where": "C:\\Users\\india\\Documents\\github\\VM2020-Electron",
+  "author": {
+    "name": "Jarosław Foksa"
+  },
+  "bugs": {
+    "url": "https://github.com/jarek-foksa/xel/issues"
+  },
+  "dependencies": {},
+  "description": "Widget toolkit for building native-like Electron, NW.js and Chrome apps",
+  "devDependencies": {
+    "firebase-tools": "^3.5.0",
+    "fs-extra": ">=2.1.2",
+    "prismjs": "^1.6.0",
+    "rollup": "^0.49.2"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-gG3YBqMKegBrZSYZSZvvX9s+o5C/pvLX+9tfCEYWcNG7Vd7XNnsk2QMD9OiN/L2Z1dzb4VtRiN9N7gQuleMXtw==",
+    "shasum": "0f91af307fbcbb5f13487cd97aa5094de723813d",
+    "tarball": "https://registry.npmjs.org/xel/-/xel-0.0.141.tgz",
+    "fileCount": 12,
+    "unpackedSize": 935269,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbIWGPCRA9TVsSAnZWagAAqQUQAJGw7H5FMmbI1nyS/a6k\nAFSRX6x+H4iZFTG0dgq7STcUuvrKxrBVYrfoW7bey3cXq8GH0bU+V9fkNguc\nKJLypLhBj/ueks7Hx7/cCAwhFkweplS8xBL5yDzDl0TyYQK6XFaigqInsqEk\nmMzHA/+PU1zmTQrepBJRdMmjXywujSCOWgPGEcBzlNyPjYRpVt2Fg1m5PKjW\nDcB3SSqSudD734RJIarugspTHnv24ISJezNwBxAgYyBWrmNh3157tAL9bWKN\nxxFoXHY1sbiL5AFCysE8PEnahxek5WgHeYnvK1mduphfuLEMbgXppap7p4y8\n4Y67aLehfKwOEV5otXD+CxsgbOEZY6ap4KSDlvtI97jG74xaKdtDoLXJmdKp\nFOCLcsdRsCYyzY2LDORjMVfgetnZmFkATaswPtBr+EwpJ14dEk4bkptzH3lR\nPidv9VB9csIntQmwEo2B75SLSfq5cMbpl5iWaRanD9m3AqqMwITsNt9TetYm\n4Ir8zod4hlwpK9RGXwExsiWFdsjYXBzL7a7A075z+v+VxviWE6uCBWV9brqN\nuUiWi52uke7mZSWkatpeuBzDwnTvP+9gYzLSS8x3j9cNWOaNyYGZzCqAD3Jx\n6tgbfmNYfgNqrVaHcE/JfGEdCCXPce2She7t1xNJ8Uf4Zs5FqIa7KDjfTGYe\n6DAM\r\n=LUbu\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "gitHead": "c991473c2cc53581d26cc8ed78ffc4f3f16efb80",
+  "homepage": "https://xel-toolkit.org/",
+  "keywords": [
+    "material",
+    "design",
+    "widget",
+    "toolkit",
+    "electron",
+    "nwjs",
+    "nw.js",
+    "macOS",
+    "desktop",
+    "ui",
+    "button",
+    "slider",
+    "tabs",
+    "card",
+    "menu",
+    "menubar",
+    "checkbox",
+    "radio",
+    "switch",
+    "select",
+    "dialog",
+    "drawer",
+    "popover",
+    "slider",
+    "throbber"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "jarek-foksa",
+      "email": "jarek@foksa.name"
+    }
+  ],
+  "name": "xel",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarek-foksa/xel.git"
+  },
+  "scripts": {
+    "prepare": "./project.js build",
+    "start": "./project.js serve"
+  },
+  "version": "0.0.141"
+}
