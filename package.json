@@ -1,0 +1,28 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Davide Berdin",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "asar": "^0.10.0",
+    "electron-prebuilt": "^0.37.4",
+    "fs-jetpack": "^0.7.3",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "q": "^1.4.1",
+    "rcedit": "^0.4.0"
+  }
+}

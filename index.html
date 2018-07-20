@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>XEL Electron Auto Updater</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <!-- build:css assets/css/* -->
+        <!-- <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" /> -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="bower_components/bootcards/dist/css/bootcards-desktop.min.css"> -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <!-- endbuild -->
+        
+        <!-- jQuery -->
+        <script src="scripts/jquery.min.js"> </script>
+
+        <!-- build:js scripts/vendor.js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <!-- <script src="bower_components/angular-material/angular-material.js"></script> -->
+        <!-- endbuild -->
+
+         <!-- Bootcards and Bootstrap -->
+        <!-- <script src="bower_components/bootcards/dist/js/bootcards.min.js"></script> -->
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- build:app scripts/app.js -->
+        <script src="scripts/app.js"></script>
+
+            <!-- Controllers -->
+        <script src="scripts/controllers/mainController.js"></script>
+        <script src="scripts/controllers/loginController.js"></script>
+        <script src="scripts/controllers/signupController.js"></script>
+
+        <!-- Services -->
+        <script src="scripts/services/loginService.js"></script>
+        <script src="scripts/services/signupService.js"></script>
+
+        <script src="scripts/routes.js"></script>
+        <!-- endbuild -->
+    </head>
+<body ng-app="app">
+    <div ui-view></div>
+</body>
+</html>
