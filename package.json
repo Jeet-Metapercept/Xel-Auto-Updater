@@ -1,5 +1,5 @@
 {
-  "name": "Xel",
+  "name": "Xel-Updater",
   "version": "0.0.6",
   "description": "Electron Auto-Updater",
   "main": "main.js",
