@@ -14,8 +14,11 @@
         <link rel="stylesheet" href="assets/css/style.css" />
         <!-- endbuild -->
         
+		<!-- Insert this line above script imports  -->
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		
         <!-- jQuery -->
-        <script src="bower_components/jquery/dist/jquery.min.js"> </script>
+        <script src="bower_components/jquery/dist/jquery.js"> </script>
 
         <!-- build:js scripts/vendor.js -->
         <script src="bower_components/angular/angular.js"></script>
@@ -45,6 +48,9 @@
 
         <script src="scripts/routes.js"></script>
         <!-- endbuild -->
+		
+		<!-- Insert this line after script imports -->
+		<script>if (window.module) module = window.module;</script>
     </head>
 <body ng-app="app">
     <div ui-view></div>
