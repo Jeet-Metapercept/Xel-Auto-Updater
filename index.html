@@ -8,10 +8,9 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
         <!-- build:css assets/css/* -->
-        <!-- <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" /> -->
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <!-- <link rel="stylesheet" href="bower_components/bootcards/dist/css/bootcards-desktop.min.css"> -->
         <link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="node_modules/xel/themes/macos.css">
         <!-- endbuild -->
         
 		<!-- Insert this line above script imports  -->
@@ -30,9 +29,10 @@
         <!-- <script src="bower_components/angular-material/angular-material.js"></script> -->
         <!-- endbuild -->
 
-         <!-- Bootcards and Bootstrap -->
+         <!-- xel and Bootstrap -->
         <!-- <script src="bower_components/bootcards/dist/js/bootcards.min.js"></script> -->
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="node_modules/xel/xel.min.js"></script>
 
         <!-- build:app scripts/app.js -->
         <script src="scripts/app.js"></script>
@@ -48,6 +48,11 @@
 
         <script src="scripts/routes.js"></script>
         <!-- endbuild -->
+		
+		<script>
+		// You can also require other files to run in this process
+		require('./renderer.js')
+		</script>
 		
 		<!-- Insert this line after script imports -->
 		<script>if (window.module) module = window.module;</script>

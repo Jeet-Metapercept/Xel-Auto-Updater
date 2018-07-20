@@ -1,28 +1,32 @@
 {
-  "name": "",
-  "version": "1.0.0",
-  "description": "",
+  "name": "Xel Auto Updater",
+  "version": "0.0.6",
+  "description": "Electron Auto-Updater",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "build --win",
+	"ship": "build --win -p always"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "author": "Davide Berdin",
+  "repository": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
+  "author": "Jeet",
   "license": "MIT",
   "bugs": {
     "url": ""
   },
-  "homepage": "",
+  "homepage": "https://github.com/Jeet-Metapercept/Xel-Auto-Updater",
   "devDependencies": {
     "asar": "^0.10.0",
+    "electron-builder": "^20.23.1",
     "electron-prebuilt": "^0.37.4",
     "fs-jetpack": "^0.7.3",
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.7",
     "q": "^1.4.1",
     "rcedit": "^0.4.0"
+  },
+  "dependencies": {
+    "electron-updater": "^3.0.3",
+    "xel": "0.0.141"
   }
 }
