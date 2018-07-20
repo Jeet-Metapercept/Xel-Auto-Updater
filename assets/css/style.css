@@ -238,8 +238,8 @@ body {
 }
 
 .content img{
-	 height: 45%;
-	 width:45%;
+	 height: 50%;
+	 width:50%;
 	 margin-top: 60px;
 	-webkit-animation: spin 25s linear infinite;
     animation: spin 25s linear infinite;
