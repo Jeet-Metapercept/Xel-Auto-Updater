@@ -2,12 +2,42 @@
 
 <head>
     <title>Xel Electron Updater</title>
-	<script src="assets/xel/xel.min.js"></script>
-	<link rel="stylesheet" href="assets/xel/themes/macos.css">
+	<script src="assets/components/xel/xel.min.js"></script>
+	<link rel="stylesheet" href="assets/components/xel/themes/macos.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+	
+	<link rel="stylesheet" href="assets/components/bootstrap/bootstrap.css">
+	
+	<!-- Insert this line above script imports  -->
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+	
+	<!-- jQuery -->
+    <script src="assets/components/jquery/jquery.min.js"> </script>
+	
+	<!-- Angular -->
+	<script src="assets/components/angular/angular.js"></script>
+    <script src="assets/components/angular-resource/angular-resource.js"></script>
+    <script src="assets/components/angular-ui-router/angular-ui-router.js"></script>
+    <script src="assets/components/angular-route/angular-route.js"></script>
+    <script src="assets/components/angular-animate/angular-animate.js"></script>
+    <script src="assets/components/angular-aria/angular-aria.js"></script>	
+	
+	<script src="assets/scripts/app.js"></script>
+	<script src="assets/scripts/routes.js"></script>
+    <!-- Controllers -->
+    <script src="assets/scripts/controllers/mainController.js"></script>
+    <script src="assets/scripts/controllers/loginController.js"></script>
+    <script src="assets/scripts/controllers/signupController.js"></script>
+    <!-- Services -->
+    <script src="assets/scripts/services/loginService.js"></script>
+    <script src="assets/scripts/services/signupService.js"></script>
+	
+	<!-- Insert this line after script imports -->
+	<script>if (window.module) module = window.module;</script>
 </head>
 
-<body style="margin: 0;">
+<body ng-app="app">
+<div ui-view></div>
 <x-notification id="notify" timeout="3500"></x-notification>
 	<!-- <script>
 		// You can also require other files to run in this process
@@ -58,26 +88,10 @@
 		})
     </script>
 
-	
-	
-	<x-card>
-	  <main>
-		<h2><strong>Xel Electron Updater</strong></h2>
-		<!-- All of the Node.js APIs are available in this renderer process. -->
-		<p>We are using Node.js <script>document.write(process.versions.node)</script>,</p>
-		<p>Chromium <script>document.write(process.versions.chrome)</script>,</p>
-		<p>and Electron <script>document.write(process.versions.electron)</script>.</p>
-	  </main>
-	</x-card>
-	
-	<x-button onClick="key();">
-	  <x-label>check for Updates</x-label>
-	</x-button>
-
-    <div style="position:absolute; right:20%; bottom: 5%" id="messages"></div>
+<div style="position:absolute; right:20%; bottom: 5%" id="messages"></div>
 
 	<div style="position:absolute; left:2%; bottom: 2%">
-    Version: <span id="version">v 0.4.3</span>
+    Version: <span id="version">v 0.4.5</span>
 	</div>
 	
 	
@@ -92,48 +106,9 @@
 	 <x-button id="ready" onClick="ipcRenderer.send('quitAndInstall')">
 		<x-label>no updates</x-label>
 	 </x-button>
-	</div>
+</div>	
 	
-	<div>
-		<main>
-		  <article class="wwdc">
-			<span class="spin">
-			  <!-- Large Circles -->
-			  <div class="large circle one"></div>
-			  <div class="large circle two"></div>
-			  <div class="large circle three"></div>
-			  <div class="large circle four"></div>
-			  <div class="large circle five"></div>
-			  <div class="large circle six"></div>
-			  <div class="large circle seven"></div>
-			  <div class="large circle eight"></div>
-			</span>
-			<span class="pulse">
-			  <!-- Small Shapes -->
-			  <div class="small circle one"></div>
-			  <div class="small squircle two"></div>
-			  <div class="small circle three"></div>
-			  <div class="small squircle four"></div>
-			  <div class="small circle five"></div>
-			  <div class="small squircle six"></div>
-			  <div class="small circle seven"></div>
-			  <div class="small squircle eight"></div>
-			</span>
-			  <!-- Squircles -->
-			  <span class="spin-reverse">
-				<div class="large squircle one"></div>
-			  </span>
-			  <div class="large squircle two">
-				<div class="content">
-				 <img src="assets/img/xel.svg"/>
-				<!-- <h1>The epicenter of change.</h1> -->
-				<!-- <p><strong>WWDC</strong>15</p> -->
-			  </div>
-			</div>
-		  </article>
-		</main>
-	</div>
-	
+
 <script>
 	  var notification = document.querySelector("#notify");
 

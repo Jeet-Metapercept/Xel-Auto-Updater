@@ -19,7 +19,7 @@ function createDefaultWindow() {
 	frame: true,
     backgroundColor: '#fafafa',
     //show: false,
-    icon: __dirname + '/assets/icons/icon.ico'
+    icon: __dirname + '/assets/img/icon.ico'
 	});
 
     win.loadURL(`file://${__dirname}/index.html`);
@@ -31,6 +31,10 @@ function createDefaultWindow() {
 app.on('ready', function() {
   createDefaultWindow()
   autoUpdater.checkForUpdates();
+  
+  /* appVersion = require('electron').remote.app.getVersion();
+  var version = document.getElementById('version');
+            version.innerHTML = appVersion; */
 });
 
 // when the update has been downloaded and is ready to be installed, notify the BrowserWindow
