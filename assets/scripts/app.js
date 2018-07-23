@@ -1,4 +1,4 @@
-var appName = angular.module('app', ['ui.router', 'app.routes'])
+var appName = angular.module('app', ['ui.router', 'app.routes', 'electangular'])
 
 .run(function($http) {
     // Sends this header with any AJAX request

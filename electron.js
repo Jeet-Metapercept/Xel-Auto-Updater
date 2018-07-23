@@ -1,5 +1,6 @@
 const {app, BrowserWindow, ipcMain} = require('electron');
 const {autoUpdater} = require("electron-updater");
+const {ipcMain} = require('electron').ipcMain;
 let win; // this will store the window object
 
 //For Titlebar
@@ -24,6 +25,12 @@ function createDefaultWindow() {
 
     win.loadURL(`file://${__dirname}/index.html`);
     win.on('closed', () => app.quit());
+	
+	ipcMain.on('electron-msg', (event, arg) => {
+    console.log('main-> ' + arg);
+    win.webContents.send('electron-msg', arg);
+	});
+  
   return win;
 }
 
@@ -32,9 +39,17 @@ app.on('ready', function() {
   createDefaultWindow()
   autoUpdater.checkForUpdates();
   
-  /* appVersion = require('electron').remote.app.getVersion();
-  var version = document.getElementById('version');
-            version.innerHTML = appVersion; */
+  //electangular ipc
+  ipcMain.on('electron-msg', (event, msg) => {
+    //handle incoming message here
+    console.log(msg);
+
+    //message can be an Object
+    /* if (msg.username == 'dude') {
+      console.log(msg.access_level);
+    } */
+  });
+  
 });
 
 // when the update has been downloaded and is ready to be installed, notify the BrowserWindow

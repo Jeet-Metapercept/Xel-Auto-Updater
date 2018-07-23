@@ -4,7 +4,7 @@
 </div>
 
 	<div>
-		<main style="margin-left: 90%; margin-top: 7%">
+		<main style="margin-left: 90%; ">
 		  <article class="wwdc">
 			<span class="spin">
 			  <!-- Large Circles -->
@@ -43,9 +43,25 @@
 		</main>
 	</div>
 
-<h2>login</h2>
+<x-card>
+	<main>
+	<h2><strong>login</strong></h2>
+	</main>
+</x-card>
 
-<button ui-sref="main">go to main</button>
+<x-box >
+<x-button ui-sref="main">
+    <x-label>go to main</x-label>
+  </x-button>
+
+  <x-button ng-click="doBeep();" style="margin-left: 5px;">
+    <x-label>Beep</x-label>
+  </x-button>
+
+  <x-button ng-click="showMessage();" style="margin-left: 5px;">
+    <x-label>Message</x-label>
+  </x-button>
+</x-box>
 
 	
 	<x-card>
@@ -54,4 +70,5 @@
 		<p>{{updateDetails || 'Details..'}}</p>
 	  </main>
 	</x-card>
+
 </div>
