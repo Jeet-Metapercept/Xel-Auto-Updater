@@ -1,10 +1,10 @@
 <div class="col-md-12">
-<h2>login</h2>
-
-<button ui-sref="main">go to main</button>
+<div style="position:absolute; right:50%; bottom: 2%;">
+    <span id="check"></span>
+</div>
 
 	<div>
-		<main style="margin-top: 20%;">
+		<main style="margin-left: 90%; margin-top: 7%">
 		  <article class="wwdc">
 			<span class="spin">
 			  <!-- Large Circles -->
@@ -42,4 +42,16 @@
 		  </article>
 		</main>
 	</div>
+
+<h2>login</h2>
+
+<button ui-sref="main">go to main</button>
+
+	
+	<x-card>
+	  <main>
+		<strong>Update Details</strong>
+		<p>{{updateDetails || 'Details..'}}</p>
+	  </main>
+	</x-card>
 </div>

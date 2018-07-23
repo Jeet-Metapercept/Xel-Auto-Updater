@@ -28,10 +28,10 @@ body {
 
 .wwdc{
 	
-	transform: scale(0.5);
-	-webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -o-transform: scale(0.5);
+	transform: scale(0.16);
+	-webkit-transform: scale(0.16);
+    -moz-transform: scale(0.16);
+    -o-transform: scale(0.16);
 }
 
 .wwdc span {
@@ -41,7 +41,7 @@ body {
   left: calc(50% - 10em);
   width: 20em;
   height: 20em;
-}
+} 
 
 .wwdc span.spin {
   -webkit-animation: spin 10s linear infinite;
