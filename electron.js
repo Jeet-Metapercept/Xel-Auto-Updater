@@ -1,6 +1,5 @@
 const {app, BrowserWindow, ipcMain} = require('electron');
 const {autoUpdater} = require("electron-updater");
-const {ipcMain} = require('electron').ipcMain;
 let win; // this will store the window object
 
 //For Titlebar
