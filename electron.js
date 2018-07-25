@@ -63,10 +63,17 @@ autoUpdater.on('update-available', (info) => {
 
 // when update downloading, show process
 autoUpdater.on('download-progress', (progressObj) => {
-  let log_message = "Download speed: " + progressObj.bytesPerSecond;
+  /* let log_message = "Download speed: " + progressObj.bytesPerSecond;
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
-  sendStatusToWindow(log_message);
+  sendStatusToWindow(log_message); */
+  let update_details = {
+								download_speed: progressObj.bytesPerSecond,
+								download_percentage: progressObj.percent,
+								download_total: progressObj.total,
+								download_transferred: progressObj.transferred
+							};
+   sendStatusToWindow(update_details);
 })
 
 // when the update is not available and nothing to be downloaded, notify the BrowserWindow
