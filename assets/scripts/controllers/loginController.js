@@ -37,12 +37,12 @@ $rootScope.$on('electron-msg', (event, msg) => {
 //UPDATE CHECKER
 const ipcRenderer = require('electron').ipcRenderer;
 	
-	ipcRenderer.on('message', function(event, text) {
+	/* ipcRenderer.on('message', function(event, text) {
 	 console.log(text);
 	 $scope.updateDetails = text;
 	 
 	 $scope.download_complete = text
-	}) 
+	})  */
 	
 	ipcRenderer.on('update', function(event, text) {
 	 console.log(text);
