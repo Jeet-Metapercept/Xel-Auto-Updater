@@ -48,22 +48,22 @@ const ipcRenderer = require('electron').ipcRenderer;
 	 //console.log(text);
 	 //$scope.download_complete = text;
 	 var update_details = document.getElementById('percent');
-	  update_details.innerHTML = text.toFixed(2) + '%';
+	  update_details.innerHTML = text.toFixed(2) + ' %';
 	  document.getElementsByTagName("x-progressbar")[0].setAttribute("value", text/100)
 	})
 	//speed
 	ipcRenderer.on('speed', function(event, speed) {
 	 var update_speed = document.getElementById('speed');
-	  update_speed.innerHTML = speed/1024 + 'kbps';
+	  update_speed.innerHTML = (speed/1024).toFixed(2) + ' kbps';
 	})
 	//total update
 	ipcRenderer.on('total', function(event, total) {
 	 var update_total = document.getElementById('total');
-	  update_total.innerHTML = total/1024 + 'MB';
+	  update_total.innerHTML = (total/1024).toFixed(2) + ' MB';
 	})
 
 	ipcRenderer.on('transferred', function(event, transferred) {
 	 var update_transferred = document.getElementById('transferred');
-	  update_transferred.innerHTML = transferred/1024 + 'MB';
+	  update_transferred.innerHTML = (transferred/1024).toFixed(2) +  'MB';
 	})
 });
