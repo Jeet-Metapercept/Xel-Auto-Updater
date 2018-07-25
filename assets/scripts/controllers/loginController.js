@@ -10,7 +10,7 @@ $rootScope.$on('electron-msg', (event, msg) => {
 	$scope.showErrorBox = function() {
 		electron.dialog.showErrorBox('Error Title', 'You totally screwed up.');
 	  }
-  
+	  
 	$scope.doBeep = function() {
 		electron.shell.beep();
 	}
@@ -45,8 +45,12 @@ const ipcRenderer = require('electron').ipcRenderer;
 	})  */
 	
 	ipcRenderer.on('update', function(event, text) {
-	 console.log(text);
+	 //console.log(text);
 	 $scope.download_complete = text;
-	}) 
+	 var update_details = document.getElementById('percent');
+	  update_details.innerHTML = text;
+	  document.getElementsByTagName("x-progressbar")[0].setAttribute("value", text/100)
+	 })
+	
 	
 });

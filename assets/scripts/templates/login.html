@@ -71,7 +71,8 @@
 		<!-- <p>{{'Download speed : ' + updateDetails.download_speed || Speed}}</p> -->
 		<p class="small">{{'Download : ' + download_complete + '%' || Percentage}}</p>
 		<p class="small">{{download_complete}}</p>
-		<x-progressbar value="{{download_complete}}"></x-progressbar>
+		<p class="small">Download : <span id="percent" ></span>%</p>
+		<x-progressbar value="0.{{download_complete}}"></x-progressbar>
 	  </main>
 	</x-card>
 
