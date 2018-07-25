@@ -8,6 +8,9 @@ const ElectronTitlebarWindows = require('electron-titlebar-windows');
 function sendStatusToWindow(text) {
   win.webContents.send('message', text);
 }
+function sendStatusToUpdateWindow(text) {
+  win.webContents.send('update', text);
+}
 
 // creates the default window
 function createDefaultWindow() {
@@ -23,6 +26,7 @@ function createDefaultWindow() {
 	});
 
     win.loadURL(`file://${__dirname}/index.html`);
+	win.webContents.openDevTools();
     win.on('closed', () => app.quit());
 	
 	ipcMain.on('electron-msg', (event, arg) => {
@@ -74,6 +78,9 @@ autoUpdater.on('download-progress', (progressObj) => {
 								download_transferred: progressObj.transferred
 							};
    sendStatusToWindow(update_details);
+   
+   let update_complete = progressObj.percent;
+   sendStatusToUpdateWindow(update_complete);
 })
 
 // when the update is not available and nothing to be downloaded, notify the BrowserWindow

@@ -40,6 +40,13 @@ const ipcRenderer = require('electron').ipcRenderer;
 	ipcRenderer.on('message', function(event, text) {
 	 console.log(text);
 	 $scope.updateDetails = text;
+	 
+	 $scope.download_complete = text
+	}) 
+	
+	ipcRenderer.on('update', function(event, text) {
+	 console.log(text);
+	 $scope.download_complete = text;
 	}) 
 	
 });

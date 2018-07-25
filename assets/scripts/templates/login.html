@@ -69,7 +69,8 @@
 		<strong>Update Details</strong>
 		<!-- <p>{{updateDetails || 'Details..'}}</p> -->
 		<p>{{'Download speed : ' + updateDetails.download_speed || Speed}}</p>
-		<p>{{'Download : ' + updateDetails.download_percentage + '%' || Percentage}}</p>
+		<p>{{'Download : ' + download_complete + '%' || Percentage}}</p>
+		<p>{{download_complete}}</p>
 	  </main>
 	</x-card>
 
