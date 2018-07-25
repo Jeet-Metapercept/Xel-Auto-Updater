@@ -46,7 +46,7 @@ const ipcRenderer = require('electron').ipcRenderer;
 	
 	ipcRenderer.on('update', function(event, text) {
 	 //console.log(text);
-	 $scope.download_complete = text;
+	 //$scope.download_complete = text;
 	 var update_details = document.getElementById('percent');
 	  update_details.innerHTML = text;
 	  document.getElementsByTagName("x-progressbar")[0].setAttribute("value", text/100)
