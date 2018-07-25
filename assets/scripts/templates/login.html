@@ -43,36 +43,34 @@
 		</main>
 	</div>
 
-<x-card>
-	<main>
-	<h2><strong>login</strong></h2>
-	</main>
-</x-card>
+	<x-card>
+		<main>
+		<h2><strong>login</strong></h2>
+		</main>
+	</x-card>
 
-<x-box >
-<x-button ui-sref="main">
-    <x-label>go to main</x-label>
-  </x-button>
+	<x-box >
+	<x-button ui-sref="main">
+		<x-label>go to main</x-label>
+	  </x-button>
 
-  <x-button ng-click="doBeep();" style="margin-left: 5px;">
-    <x-label>Beep</x-label>
-  </x-button>
+	  <x-button ng-click="doBeep();" style="margin-left: 5px;">
+		<x-label>Beep</x-label>
+	  </x-button>
 
-  <x-button ng-click="showMessage();" style="margin-left: 5px;">
-    <x-label>Message</x-label>
-  </x-button>
-</x-box>
+	  <x-button ng-click="showMessage();" style="margin-left: 5px;">
+		<x-label>Message</x-label>
+	  </x-button>
+	</x-box>
 
 	
 	<x-card>
 	  <main>
 		<p><strong>Update Details</strong></p>
-		<!-- <p>{{updateDetails || 'Details..'}}</p> -->
-		<!-- <p>{{'Download speed : ' + updateDetails.download_speed || Speed}}</p> -->
-		<!-- <p class="small">{{'Download : ' + download_complete + '%' || Percentage}}</p>
-		<p class="small">{{download_complete}}</p> -->
+		<p class="small">Package : <span id="transferred">23</span> / <span id="total">23</span>&nbsp;MB</p>
+		<p class="small">Download Speed : <span id="speed"></span>kbps</p>
 		<p class="small">Download : <span id="percent" ></span>%</p>
-		<x-progressbar value="0.{{download_complete}}"></x-progressbar>
+		<p class="small"><x-progressbar value="0.{{download_complete}}"></x-progressbar></p>
 	  </main>
 	</x-card>
 

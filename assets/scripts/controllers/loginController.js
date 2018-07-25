@@ -50,7 +50,20 @@ const ipcRenderer = require('electron').ipcRenderer;
 	 var update_details = document.getElementById('percent');
 	  update_details.innerHTML = text;
 	  document.getElementsByTagName("x-progressbar")[0].setAttribute("value", text/100)
-	 })
-	
-	
+	})
+	//speed
+	ipcRenderer.on('speed', function(event, speed) {
+	 var update_speed = document.getElementById('speed');
+	  update_speed.innerHTML = speed/1024;
+	})
+	//total update
+	ipcRenderer.on('total', function(event, total) {
+	 var update_total = document.getElementById('total');
+	  update_total.innerHTML = total/1024;
+	})
+
+	ipcRenderer.on('transferred', function(event, transferred) {
+	 var update_transferred = document.getElementById('transferred');
+	  update_transferred.innerHTML = transferred/1024;
+	})
 });

@@ -8,8 +8,11 @@ const ElectronTitlebarWindows = require('electron-titlebar-windows');
 function sendStatusToWindow(text) {
   win.webContents.send('message', text);
 }
-function sendStatusToUpdateWindow(text) {
+function sendStatusToUpdateWindow(text, speed, total, transferred) {
   win.webContents.send('update', text);
+  win.webContents.send('speed', speed);
+  win.webContents.send('total', total);
+  win.webContents.send('transferred', transferred);
 }
 
 // creates the default window
@@ -71,16 +74,19 @@ autoUpdater.on('download-progress', (progressObj) => {
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
   sendStatusToWindow(log_message); */
-  let update_details = {
+/*   let update_details = {
 								download_speed: progressObj.bytesPerSecond,
 								download_percentage: progressObj.percent,
 								download_total: progressObj.total,
 								download_transferred: progressObj.transferred
 							};
    sendStatusToWindow(update_details);
-   
+    */
    let update_complete = progressObj.percent;
-   sendStatusToUpdateWindow(update_complete);
+   let download_speed = progressObj.bytesPerSecond;
+   let download_total = progressObj.total;
+   let download_transferred= progressObj.transferred;
+   sendStatusToUpdateWindow(update_complete, download_speed, download_total, download_transferred);
 })
 
 // when the update is not available and nothing to be downloaded, notify the BrowserWindow
