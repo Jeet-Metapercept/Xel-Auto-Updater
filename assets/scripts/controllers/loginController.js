@@ -18,8 +18,8 @@ $rootScope.$on('electron-msg', (event, msg) => {
 	$scope.showMessage = function() {
 		electron.dialog.showMessageBox({
 		  type: 'info',
-		  title: 'Are you sure?',
-		  message: 'Some message',
+		  title: 'Software Update',
+		  message: 'New update available. Click ok to download the updates',
 		  //buttons: ['OK', 'Nope'],
 		  buttons: ['Cancel', 'OK'],
 		  cancelId: 0,

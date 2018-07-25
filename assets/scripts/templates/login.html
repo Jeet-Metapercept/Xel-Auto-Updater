@@ -66,11 +66,12 @@
 	
 	<x-card>
 	  <main>
-		<strong>Update Details</strong>
+		<p><strong>Update Details</strong></p>
 		<!-- <p>{{updateDetails || 'Details..'}}</p> -->
 		<!-- <p>{{'Download speed : ' + updateDetails.download_speed || Speed}}</p> -->
-		<p>{{'Download : ' + download_complete + '%' || Percentage}}</p>
-		<p>{{download_complete}}</p>
+		<p class="small">{{'Download : ' + download_complete + '%' || Percentage}}</p>
+		<p class="small">{{download_complete}}</p>
+		<x-progressbar value="{{download_complete}}"></x-progressbar>{{tho}}
 	  </main>
 	</x-card>
 
