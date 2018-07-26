@@ -66,9 +66,7 @@ const ipcRenderer = require('electron').ipcRenderer;
 	//update ready
 	ipcRenderer.on('updateReady', function(event, text) {
 			$scope.showUpdateMessage();
-		   var container = document.getElementById('ready');
-            container.innerHTML = "new version ready!";
-			
+
 			var update = document.querySelector("#notify");
 			update.innerHTML = "Updates download complete";
             update.opened = true;

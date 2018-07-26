@@ -12,7 +12,7 @@ const ipcRenderer = require('electron').ipcRenderer;
     })
 	ipcRenderer.on('updateNotAvailable', function(event, text) {
 			var no_update = document.querySelector("#notify");
-			no_update.innerHTML = "Latest Version";
+			no_update.innerHTML = "Latest Version : v" + $scope.appVersion;
 			no_update.opened = true;
     })	
 	ipcRenderer.on('updateReady', function(event, text) { 
@@ -22,8 +22,8 @@ const ipcRenderer = require('electron').ipcRenderer;
 			
 			/* var new_update = document.getElementById("update_available");
 			new_update.addEventListener("click",function(e){
-				button.disabled = "true";
-			},false); */
+				ipcRenderer.send('quitAndInstall');
+			}); */
     })
 	
 	var notification = document.querySelector("#notify");

@@ -6,25 +6,6 @@
 		<p>Basic Xel Auto Updater for Electron Applications</p>
 	  </main>
 	</x-card>
-	<x-button id="update_available" style="opacity: 0">
-	  <x-label>Check for Updates</x-label>
-	  <dialog>
-			<main>
-			  <h3>New Version Available</h3>
-			  <p>Update it ready to install. Click here to install the lastest version. Application will be auto updated on next restart</p>
-			</main>
-
-			<footer>
-			  <!-- <x-button id="disagree-button">
-				<x-label>Cancel</x-label>
-			  </x-button> -->
-			  <x-button toggled id="agree-button" ng-click="installUpdates();">
-				<x-label>Restart</x-label>
-			  </x-button>
-			</footer>
-		</dialog>
-	</x-button>
-	
 	
 	<x-card>
 	  <main>
@@ -43,5 +24,23 @@
 	  <x-icon name="system-update-alt"></x-icon>
 	  <x-label>{{ ' ' + appVersion}}</x-label>
   </x-box>
+</x-button>
+<x-button id="update_available" style="position:absolute; right:40%; bottom: 7%; opacity: 0">
+	  <x-label>Check for Updates</x-label>
+	  <dialog>
+			<main>
+			  <h3>New Version Available</h3>
+			  <p>Update it ready to install. Click here to install the lastest version. Application will be auto updated on next restart</p>
+			</main>
+
+			<footer>
+			  <!-- <x-button id="disagree-button">
+				<x-label>Cancel</x-label>
+			  </x-button> -->
+			  <x-button toggled id="agree-button" ng-click="installUpdates();">
+				<x-label>Restart</x-label>
+			  </x-button>
+			</footer>
+		</dialog>
 </x-button>
 
