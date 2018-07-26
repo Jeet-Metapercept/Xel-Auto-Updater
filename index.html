@@ -48,14 +48,11 @@
     <script>
         const ipcRenderer = require('electron').ipcRenderer;
         // wait for an updateReady message
-         ipcRenderer.on('updateReady', function(event, text) { -->
-            <!-- var container = document.getElementById('ready'); -->
-            <!-- container.innerHTML = "new version ready!"; -->
-			var update = document.querySelector("#notify");
-			update.innerHTML = "update download complete";
-            update.opened = true;
-			});
-         })
+         <!-- ipcRenderer.on('updateReady', function(event, text) {  -->
+			<!-- var update = document.querySelector("#notify"); -->
+			<!-- update.innerHTML = "update download complete"; -->
+            <!-- update.opened = true; -->
+         <!-- }) -->
 		// wait for an updateAvailable message
         ipcRenderer.on('updateAvailable', function(event, text) {
             // changes the text

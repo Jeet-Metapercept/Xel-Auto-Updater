@@ -56,25 +56,19 @@ const ipcRenderer = require('electron').ipcRenderer;
 	 var update_total = document.getElementById('total');
 	  update_total.innerHTML = (total/1024).toFixed(2) + ' kb';
 	})
-
 	//transferred
 	ipcRenderer.on('transferred', function(event, transferred) {
 	 var update_transferred = document.getElementById('transferred');
 	  update_transferred.innerHTML = (transferred/1024).toFixed(2) +  ' kb';
 	})
-	
-	//update ready
-	ipcRenderer.on('updateReady', function(event, text) {
-			//$scope.showUpdateMessage();
-
+	//update downloaded
+	/* ipcRenderer.on('updateReady', function(event, text) {
 			var update = document.querySelector("#notify");
-			update.innerHTML = "Updates download complete";
+			update.innerHTML = "update download complete";
             update.opened = true;
 			
-			$timeout(function() {
-				angular.element('#update_available').triggerHandler('click');
-			});
-    })
+				$('#update_available').click();
+    }) */
 	
 	
 });
