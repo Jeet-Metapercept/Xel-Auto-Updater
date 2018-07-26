@@ -44,7 +44,7 @@
 	</x-card>
 
 	<x-box >
-	<x-button ui-sref="main">
+	  <x-button ui-sref="main">
 		<x-label>go to main</x-label>
 	  </x-button>
 
@@ -58,9 +58,9 @@
 	</x-box>
 	
 	
-	<x-card>
+	<x-card ng-show="view_details">
 	  <main>
-		<p><strong>Update Details</strong></p>
+		<h4><strong>Details</strong></h4>
 		<p class="small">Update Package : <span id="transferred"></span> / <span id="total"></span>&nbsp;</p>
 		<p class="small">Download Speed : <span id="speed"></span></p>
 		<p class="small">Download : <span id="percent" ></span></p>
