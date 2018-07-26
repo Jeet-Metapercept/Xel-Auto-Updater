@@ -40,12 +40,6 @@ const ipcRenderer = require('electron').ipcRenderer;
 	
 //UPDATE CHECKER
 	
-	/* ipcRenderer.on('message', function(event, text) {
-	 console.log(text);
-	 $scope.updateDetails = text;
-	 
-	 $scope.download_complete = text
-	})  */
 	
 	ipcRenderer.on('update', function(event, text) {
 	 //console.log(text);
@@ -62,13 +56,13 @@ const ipcRenderer = require('electron').ipcRenderer;
 	//total update
 	ipcRenderer.on('total', function(event, total) {
 	 var update_total = document.getElementById('total');
-	  update_total.innerHTML = (total/1024).toFixed(2) + ' MB';
+	  update_total.innerHTML = (total/1024).toFixed(2) + ' kb';
 	})
 
 	//transferred
 	ipcRenderer.on('transferred', function(event, transferred) {
 	 var update_transferred = document.getElementById('transferred');
-	  update_transferred.innerHTML = (transferred/1024).toFixed(2) +  'MB';
+	  update_transferred.innerHTML = (transferred/1024).toFixed(2) +  ' kb';
 	})
 	
 	//update ready
