@@ -15,16 +15,16 @@ const ipcRenderer = require('electron').ipcRenderer;
 			no_update.innerHTML = "Latest Version : v" + $scope.appVersion;
 			no_update.opened = true;
     })	
-	ipcRenderer.on('updateReady', function(event, text) { 
+	/* ipcRenderer.on('updateReady', function(event, text) { 
 			$timeout(function() {
 				angular.element('#update_available').triggerHandler('click');
 			});
 			
-			/* var new_update = document.getElementById("update_available");
+			var new_update = document.getElementById("update_available");
 			new_update.addEventListener("click",function(e){
 				ipcRenderer.send('quitAndInstall');
-			}); */
-    })
+			}); 
+    }) */
 	
 	var notification = document.querySelector("#notify");
 	$scope.installUpdates = function(){

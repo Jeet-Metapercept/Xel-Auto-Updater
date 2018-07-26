@@ -65,11 +65,15 @@ const ipcRenderer = require('electron').ipcRenderer;
 	
 	//update ready
 	ipcRenderer.on('updateReady', function(event, text) {
-			$scope.showUpdateMessage();
+			//$scope.showUpdateMessage();
 
 			var update = document.querySelector("#notify");
 			update.innerHTML = "Updates download complete";
             update.opened = true;
+			
+			$timeout(function() {
+				angular.element('#update_available').triggerHandler('click');
+			});
     })
 	
 	
