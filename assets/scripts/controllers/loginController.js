@@ -15,19 +15,23 @@ $rootScope.$on('electron-msg', (event, msg) => {
 		electron.shell.beep();
 	}
 
-	$scope.showMessage = function() {
+	
+const ipcRenderer = require('electron').ipcRenderer;	
+	$scope.showUpdateMessage = function() {
 		electron.dialog.showMessageBox({
 		  type: 'info',
 		  title: 'Software Update',
-		  message: 'New update available. Click ok to download the updates',
+		  message: 'New updates are available. Click ok to install the updates',
 		  //buttons: ['OK', 'Nope'],
-		  buttons: ['Cancel', 'OK'],
+		  buttons: ['Cancel', 'Ok'],
 		  cancelId: 0,
 		  defaultId: 1
 		}).then((result) => { //Promise, not callback.
 		  console.log(result);
 		  if(result == 1){
 			  console.log('yes');
+			  $scope.doBeep();
+			  ipcRenderer.send('quitAndInstall');
 		  }
 		}, () => {
 		  console.log('error');
@@ -35,7 +39,6 @@ $rootScope.$on('electron-msg', (event, msg) => {
    };
 	
 //UPDATE CHECKER
-const ipcRenderer = require('electron').ipcRenderer;
 	
 	/* ipcRenderer.on('message', function(event, text) {
 	 console.log(text);
@@ -62,8 +65,22 @@ const ipcRenderer = require('electron').ipcRenderer;
 	  update_total.innerHTML = (total/1024).toFixed(2) + ' MB';
 	})
 
+	//transferred
 	ipcRenderer.on('transferred', function(event, transferred) {
 	 var update_transferred = document.getElementById('transferred');
 	  update_transferred.innerHTML = (transferred/1024).toFixed(2) +  'MB';
 	})
+	
+	//update ready
+	ipcRenderer.on('updateReady', function(event, text) {
+			$scope.showUpdateMessage();
+		   var container = document.getElementById('ready');
+            container.innerHTML = "new version ready!";
+			
+			var update = document.querySelector("#notify");
+			update.innerHTML = "Updates download complete";
+            update.opened = true;
+    })
+	
+	
 });

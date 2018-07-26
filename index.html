@@ -39,7 +39,7 @@
 </head>
 
 <body ng-app="app">
-<div ui-view></div>
+<div class="view-animation" ui-view></div>
 <x-notification id="notify" timeout="3500"></x-notification>
 	<!-- <script>
 		// You can also require other files to run in this process
@@ -48,23 +48,20 @@
     <script>
         const ipcRenderer = require('electron').ipcRenderer;
         // wait for an updateReady message
-        ipcRenderer.on('updateReady', function(event, text) {
-            // changes the text of the button
-            var container = document.getElementById('ready');
-            container.innerHTML = "new version ready!";
-			
-			var update = document.querySelector("#notify");
-			update.innerHTML = "update download complete";
-            update.opened = true;
-        })
+        <!-- ipcRenderer.on('updateReady', function(event, text) { -->
+            <!-- var container = document.getElementById('ready'); -->
+            <!-- container.innerHTML = "new version ready!"; -->
+			<!-- var update = document.querySelector("#notify"); -->
+			<!-- update.innerHTML = "update download complete"; -->
+            <!-- update.opened = true; -->
+        <!-- }) -->
 		// wait for an updateAvailable message
         ipcRenderer.on('updateAvailable', function(event, text) {
             // changes the text
             //var update = document.getElementById('check');
             //update.innerHTML = "available & downloading...";
-			
 			var update = document.querySelector("#notify");
-			update.innerHTML = "updates available & downloading...";
+			update.innerHTML = "Updates Available";
 			update.opened = true;
         })
 		
@@ -75,37 +72,34 @@
             //no_update.innerHTML = "no updates available";
 			
 			var no_update = document.querySelector("#notify");
-			no_update.innerHTML = "no updates available";
+			no_update.innerHTML = "No Updates Available";
 			no_update.opened = true;
         })
 		
 		// Listen for messages
-		ipcRenderer.on('message', function(event, text) {
-		  var process_container = document.getElementById('messages');
-		  //var update_details = document.getElementById('check');
-		  update_details.innerHTML = text;
-		})
+		<!-- ipcRenderer.on('message', function(event, text) { -->
+		  <!-- var process_container = document.getElementById('messages'); -->
+		  <!-- //var update_details = document.getElementById('check'); -->
+		  <!-- update_details.innerHTML = text; -->
+		<!-- }) -->
     </script>
 
-	<div style="position:absolute; bottom: 5%" id="messages"></div>
+	<!-- <div style="position:absolute; bottom: 5%" id="messages"></div> -->
 	
 <!-- 	<div id="check" style="position:absolute; right:50%; bottom: 2%;">
 	</div> -->
 	
-	<div style="position:absolute; right:2%; bottom: 2%">
-    <!-- the button onClick sends a quitAndInstall message to the electron main process -->
-    <!-- <button id="ready" onClick="ipcRenderer.send('quitAndInstall')">no updates</button> -->
-	 <x-button id="ready" onClick="ipcRenderer.send('quitAndInstall')">
-		<x-label>no updates</x-label>
-	 </x-button>
-</div>	
+	<!-- <div style="position:absolute; right:2%; bottom: 2%"> -->
+	 <!-- <x-button id="ready" onClick="ipcRenderer.send('quitAndInstall')"> -->
+		<!-- <x-label>no updates</x-label> -->
+	 <!-- </x-button> -->
+	<!-- </div>	 -->
 	
 
 <script>
 	  var notification = document.querySelector("#notify");
-
 	  function key(){
-		notification.innerHTML = "checking for updates";
+		notification.innerHTML = "Checking for Updates";
 		notification.opened = true;
 	  }
 </script>
