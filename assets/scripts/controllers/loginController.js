@@ -39,12 +39,9 @@ const ipcRenderer = require('electron').ipcRenderer;
    };
 	
 //UPDATE CHECKER
-	$scope.view_details = false;
-	
 	ipcRenderer.on('update', function(event, text) {
 	 //console.log(text);
 	 //$scope.download_complete = text;
-	 $scope.view_details = true;
 	 var update_details = document.getElementById('percent');
 	  update_details.innerHTML = text.toFixed(2) + ' %';
 	  document.getElementsByTagName("x-progressbar")[0].setAttribute("value", text/100)

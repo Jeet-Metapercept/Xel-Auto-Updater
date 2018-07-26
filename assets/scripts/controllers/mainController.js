@@ -16,9 +16,14 @@ const ipcRenderer = require('electron').ipcRenderer;
 			no_update.opened = true;
     })	
 	ipcRenderer.on('updateReady', function(event, text) { 
-           $timeout(function() {
-			angular.element('#update_available').triggerHandler('click');
+			$timeout(function() {
+				angular.element('#update_available').triggerHandler('click');
 			});
+			
+			/* var new_update = document.getElementById("update_available");
+			new_update.addEventListener("click",function(e){
+				button.disabled = "true";
+			},false); */
     })
 	
 	var notification = document.querySelector("#notify");
