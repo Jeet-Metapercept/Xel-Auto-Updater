@@ -62,13 +62,13 @@ const ipcRenderer = require('electron').ipcRenderer;
 	  update_transferred.innerHTML = (transferred/1024).toFixed(2) +  ' kb';
 	})
 	//update downloaded
-	/* ipcRenderer.on('updateReady', function(event, text) {
+	ipcRenderer.on('updateReady', function(event, text) {
 			var update = document.querySelector("#notify");
 			update.innerHTML = "update download complete";
             update.opened = true;
 			
-				$('#update_available').click();
-    }) */
+			$scope.showUpdateMessage();
+    })
 	
 	
 });
